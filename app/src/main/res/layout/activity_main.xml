@@ -43,4 +43,13 @@
         android:text="Ver mi Perfil / Cerrar Sesión"
         app:layout_constraintTop_toBottomOf="@id/tvPlaceholderInfo" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRunDbTest"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:text="Ejecutar Prueba de Base de Datos"
+        app:layout_constraintTop_toBottomOf="@id/btnGoToProfile" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
