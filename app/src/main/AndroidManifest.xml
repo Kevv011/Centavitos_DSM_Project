@@ -36,6 +36,14 @@
             android:exported="false" />
 
         <activity
+            android:name=".ui.MovimientoFormActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.HistorialActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
 

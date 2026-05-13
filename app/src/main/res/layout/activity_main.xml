@@ -44,12 +44,24 @@
         app:layout_constraintTop_toBottomOf="@id/tvPlaceholderInfo" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnRunDbTest"
-        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:id="@+id/btnAddMovement"
+        style="@style/Widget.Material3.Button.TonalButton"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginTop="16dp"
-        android:text="Ejecutar Prueba de Base de Datos"
+        android:text="Agregar Movimiento"
+        app:icon="@android:drawable/ic_input_add"
         app:layout_constraintTop_toBottomOf="@id/btnGoToProfile" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnViewHistory"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:text="Ver Historial"
+        app:icon="@android:drawable/ic_menu_agenda"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnAddMovement"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
