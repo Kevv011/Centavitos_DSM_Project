@@ -32,4 +32,19 @@
     <string name="logout_button">Cerrar sesión</string>
     <string name="profile_updated_success">Perfil actualizado con éxito</string>
     <string name="profile_load_error">Error al cargar el perfil</string>
+    <string name="add_movement_title">Nuevo Movimiento</string>
+    <string name="edit_movement_title">Editar Movimiento</string>
+    <string name="type_label">Tipo de movimiento</string>
+    <string name="income_option">Ingreso</string>
+    <string name="expense_option">Gasto</string>
+    <string name="amount_label">Monto</string>
+    <string name="date_label">Fecha</string>
+    <string name="description_label">Descripción (Opcional)</string>
+    <string name="category_label">Categoría</string>
+    <string name="save_movement_button">Guardar movimiento</string>
+    <string name="movement_saved_success">Movimiento guardado</string>
+    <string name="history_title">Historial</string>
+    <string name="search_hint">Buscar movimiento...</string>
+    <string name="no_movements">No hay movimientos registrados</string>
+    <string name="delete_confirm">¿Eliminar este movimiento?</string>
 </resources>
