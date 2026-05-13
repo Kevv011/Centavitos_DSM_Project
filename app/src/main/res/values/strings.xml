@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">DSM_Centavitos</string>
+    <string name="app_logo_name">Centavitos</string>
+    <string name="login_title">Bienvenido de nuevo</string>
+    <string name="login_subtitle">Gestiona tus finanzas con inteligencia</string>
+    <string name="email_label">Correo electrónico</string>
+    <string name="password_label">Contraseña</string>
+    <string name="login_button">Iniciar sesión</string>
+    <string name="forgot_password">¿Olvidaste tu contraseña?</string>
+    <string name="no_account">¿No tienes cuenta? Regístrate</string>
+    <string name="error_empty_fields">Por favor, completa todos los campos</string>
+    <string name="login_success">Sesión iniciada correctamente</string>
+    <string name="register_title">Crea tu cuenta</string>
+    <string name="register_subtitle">Únete a la comunidad de ahorro</string>
+    <string name="confirm_password_label">Confirmar contraseña</string>
+    <string name="register_button">Registrarse</string>
+    <string name="already_have_account">¿Ya tienes cuenta? Inicia sesión</string>
+    <string name="error_passwords_dont_match">Las contraseñas no coinciden</string>
+    <string name="register_success">Usuario creado exitosamente</string>
+    <string name="forgot_password_title">Recuperar contraseña</string>
+    <string name="forgot_password_subtitle">Te enviaremos un correo para restablecer tu clave</string>
+    <string name="send_email_button">Enviar correo</string>
+    <string name="back_to_login">Volver al inicio de sesión</string>
+    <string name="recovery_email_sent">Correo de recuperación enviado</string>
+    <string name="profile_title">Mi Perfil</string>
+    <string name="profile_subtitle">Personaliza tu experiencia</string>
+    <string name="first_name_label">Nombre</string>
+    <string name="last_name_label">Apellido</string>
+    <string name="career_label">Carrera / Área académica</string>
+    <string name="currency_label">Moneda preferida</string>
+    <string name="save_profile_button">Guardar cambios</string>
+    <string name="logout_button">Cerrar sesión</string>
+    <string name="profile_updated_success">Perfil actualizado con éxito</string>
+    <string name="profile_load_error">Error al cargar el perfil</string>
 </resources>

@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="primary">#0a0a0a</color>
+    <color name="on_primary">#ffffff</color>
+    <color name="brand_green">#00d4a4</color>
+    <color name="brand_green_deep">#00b48a</color>
+    <color name="canvas">#ffffff</color>
+    <color name="surface">#f7f7f7</color>
+    <color name="hairline">#e5e5e5</color>
+    <color name="ink">#0a0a0a</color>
+    <color name="charcoal">#1c1c1e</color>
+    <color name="steel">#5a5a5c</color>
+    <color name="brand_error">#d45656</color>
 </resources>

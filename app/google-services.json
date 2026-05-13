@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "926026609088",
+    "project_id": "dsmcentavitos",
+    "storage_bucket": "dsmcentavitos.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:926026609088:android:7cdaf81acaed4249be5825",
+        "android_client_info": {
+          "package_name": "com.example.dsm_centavitos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5Io4FzOqG-_XkvwHE9hKD41UqBhQW1t8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

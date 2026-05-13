@@ -1,9 +1,34 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.DSM_Centavitos" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.DSM_Centavitos" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="android:windowBackground">@color/canvas</item>
     </style>
 
     <style name="Theme.DSM_Centavitos" parent="Base.Theme.DSM_Centavitos" />
+
+    <!-- Style for primary button - Pill shape -->
+    <style name="Widget.Centavitos.Button.Primary" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/primary</item>
+        <item name="android:textColor">@color/on_primary</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Centavitos.Button.Pill</item>
+    </style>
+
+    <style name="ShapeAppearance.Centavitos.Button.Pill" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- Style for text input -->
+    <style name="Widget.Centavitos.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/brand_green</item>
+        <item name="hintTextColor">@color/steel</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Centavitos.Input</item>
+    </style>
+
+    <style name="ShapeAppearance.Centavitos.Input" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
 </resources>
