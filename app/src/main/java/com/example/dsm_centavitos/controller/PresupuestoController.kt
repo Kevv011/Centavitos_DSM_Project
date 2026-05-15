@@ -49,6 +49,52 @@ class PresupuestoController(context: Context) {
         return presupuestos
     }
 
+    fun updatePresupuesto(presupuesto: Presupuesto): Int {
+        val db = dbHelper.writableDatabase
+        val values = ContentValues().apply {
+            put(HelperDB.COLUMN_PRE_MONTO, presupuesto.montoLimite)
+        }
+        return db.update(
+            HelperDB.TABLE_PRESUPUESTOS,
+            values,
+            "${HelperDB.COLUMN_PRE_ID} = ? AND ${HelperDB.COLUMN_PRE_UID} = ?",
+            arrayOf(presupuesto.id.toString(), presupuesto.firebaseUid)
+        )
+    }
+
+    fun deletePresupuesto(id: Int, uid: String): Int {
+        val db = dbHelper.writableDatabase
+        return db.delete(
+            HelperDB.TABLE_PRESUPUESTOS,
+            "${HelperDB.COLUMN_PRE_ID} = ? AND ${HelperDB.COLUMN_PRE_UID} = ?",
+            arrayOf(id.toString(), uid)
+        )
+    }
+
+    fun getPresupuestoByCategoria(uid: String, catId: Int, mes: Int, anio: Int): Presupuesto? {
+        val db = dbHelper.readableDatabase
+        val cursor = db.query(
+            HelperDB.TABLE_PRESUPUESTOS,
+            null,
+            "${HelperDB.COLUMN_PRE_UID} = ? AND ${HelperDB.COLUMN_PRE_CAT_ID} = ? AND ${HelperDB.COLUMN_PRE_MES} = ? AND ${HelperDB.COLUMN_PRE_ANIO} = ?",
+            arrayOf(uid, catId.toString(), mes.toString(), anio.toString()),
+            null, null, null
+        )
+        var pre: Presupuesto? = null
+        if (cursor.moveToFirst()) {
+            pre = Presupuesto(
+                id = cursor.getInt(cursor.getColumnIndexOrThrow(HelperDB.COLUMN_PRE_ID)),
+                firebaseUid = cursor.getString(cursor.getColumnIndexOrThrow(HelperDB.COLUMN_PRE_UID)),
+                categoriaId = cursor.getInt(cursor.getColumnIndexOrThrow(HelperDB.COLUMN_PRE_CAT_ID)),
+                montoLimite = cursor.getDouble(cursor.getColumnIndexOrThrow(HelperDB.COLUMN_PRE_MONTO)),
+                mes = cursor.getInt(cursor.getColumnIndexOrThrow(HelperDB.COLUMN_PRE_MES)),
+                anio = cursor.getInt(cursor.getColumnIndexOrThrow(HelperDB.COLUMN_PRE_ANIO))
+            )
+        }
+        cursor.close()
+        return pre
+    }
+
     fun insertAlerta(alerta: Alerta): Long {
         val db = dbHelper.writableDatabase
         val values = ContentValues().apply {

@@ -47,4 +47,40 @@
     <string name="search_hint">Buscar movimiento...</string>
     <string name="no_movements">No hay movimientos registrados</string>
     <string name="delete_confirm">¿Eliminar este movimiento?</string>
+
+    <!-- Dashboard Strings -->
+    <string name="dashboard_title">Centavitos</string>
+    <string name="saldo_disponible">Saldo Disponible</string>
+    <string name="ingresos_label">Ingresos</string>
+    <string name="gastos_label">Gastos</string>
+    <string name="accesos_rapidos">Accesos Rápidos</string>
+    <string name="nav_presupuestos">Presupuestos</string>
+    <string name="nav_reportes">Reportes</string>
+    <string name="nav_historial">Historial</string>
+    <string name="nav_perfil">Perfil</string>
+    <string name="ultimos_movimientos">Últimos Movimientos</string>
+    <string name="default_amount">$0.00</string>
+    <string name="default_income">+$0.00</string>
+    <string name="default_expense">-$0.00</string>
+    <string name="desc_alert">Alerta de presupuesto</string>
+    <string name="desc_icon_nav">Icono de navegación</string>
+
+    <!-- Presupuestos Strings -->
+    <string name="presupuestos_title">Presupuestos</string>
+    <string name="nuevo_presupuesto">Nuevo Presupuesto</string>
+    <string name="limite_gasto">Límite de Gasto</string>
+    <string name="mes_actual">Mes Actual</string>
+    <string name="consumido_status">%1$d%% consumido</string>
+    <string name="monto_de_limite"> de </string>
+    <string name="no_presupuestos">No has establecido presupuestos para este mes.</string>
+    <string name="save_presupuesto">Guardar Presupuesto</string>
+    <string name="edit_presupuesto">Editar Presupuesto</string>
+    <string name="error_monto_invalid">El monto debe ser mayor a 0</string>
+    <string name="presupuesto_saved">Presupuesto guardado con éxito</string>
+
+    <!-- Reportes Strings -->
+    <string name="reportes_title">Reportes</string>
+    <string name="gastos_del_mes">Gastos del Mes</string>
+    <string name="distribucion_categoria">Distribución por Categoría</string>
+    <string name="no_report_data">No hay gastos registrados este mes para generar un reporte.</string>
 </resources>
