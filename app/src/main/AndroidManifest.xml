@@ -44,6 +44,14 @@
             android:exported="false" />
 
         <activity
+            android:name=".ui.PresupuestoActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.ReportesActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
 

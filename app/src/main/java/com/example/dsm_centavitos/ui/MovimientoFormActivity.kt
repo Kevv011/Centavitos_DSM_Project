@@ -9,7 +9,9 @@ import com.example.dsm_centavitos.R
 import com.example.dsm_centavitos.controller.AuthController
 import com.example.dsm_centavitos.controller.CategoriaController
 import com.example.dsm_centavitos.controller.MovimientoController
+import com.example.dsm_centavitos.controller.PresupuestoController
 import com.example.dsm_centavitos.databinding.ActivityMovimientoFormBinding
+import com.example.dsm_centavitos.model.Alerta
 import com.example.dsm_centavitos.model.Categoria
 import com.example.dsm_centavitos.model.Movimiento
 import java.text.SimpleDateFormat
@@ -21,6 +23,7 @@ class MovimientoFormActivity : AppCompatActivity() {
     private val authController = AuthController()
     private lateinit var categoriaController: CategoriaController
     private lateinit var movimientoController: MovimientoController
+    private lateinit var presupuestoController: PresupuestoController
     
     private var selectedType = "GASTO"
     private var categoriesList = listOf<Categoria>()
@@ -35,6 +38,7 @@ class MovimientoFormActivity : AppCompatActivity() {
 
         categoriaController = CategoriaController(this)
         movimientoController = MovimientoController(this)
+        presupuestoController = PresupuestoController(this)
 
         movementId = intent.getIntExtra("MOVEMENT_ID", -1)
 
@@ -173,9 +177,56 @@ class MovimientoFormActivity : AppCompatActivity() {
 
         if (result != -1L) {
             Toast.makeText(this, "Movimiento guardado", Toast.LENGTH_SHORT).show()
+            
+            // SI ES UN GASTO, VERIFICAR ALERTAS
+            if (selectedType == "GASTO") {
+                checkBudgetAlerts(uid, selectedCategoryId, fecha)
+            }
+
             finish()
         } else {
             Toast.makeText(this, "Error al guardar", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun checkBudgetAlerts(uid: String, catId: Int, fecha: String) {
+        // Extraer mes y año de la fecha "yyyy-MM-dd"
+        val parts = fecha.split("-")
+        if (parts.size < 2) return
+        val anio = try { parts[0].toInt() } catch (e: Exception) { return }
+        val mes = try { parts[1].toInt() } catch (e: Exception) { return }
+
+        // Buscar si existe un presupuesto para esta categoría, mes y año
+        val presupuestos = presupuestoController.getPresupuestos(uid, mes, anio)
+        val presupuesto = presupuestos.find { it.categoriaId == catId }
+
+        if (presupuesto != null) {
+            val gastoActual = presupuestoController.getGastoAcumulado(uid, catId, mes, anio)
+            val limite = presupuesto.montoLimite
+            val porcentaje = (gastoActual / limite) * 100
+            
+            val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+            val fechaAlerta = sdf.format(Date())
+
+            if (porcentaje >= 100) {
+                presupuestoController.insertAlerta(Alerta(
+                    firebaseUid = uid,
+                    presupuestoId = presupuesto.id,
+                    tipo = "EXCEDIDO",
+                    mensaje = "¡Límite superado! Has gastado $ %.2f de tu presupuesto de $ %.2f".format(gastoActual, limite),
+                    fecha = fechaAlerta,
+                    estado = "ACTIVA"
+                ))
+            } else if (porcentaje >= 80) {
+                presupuestoController.insertAlerta(Alerta(
+                    firebaseUid = uid,
+                    presupuestoId = presupuesto.id,
+                    tipo = "ADVERTENCIA",
+                    mensaje = "Cuidado: Has alcanzado el 80% de tu presupuesto ($ %.2f)".format(limite),
+                    fecha = fechaAlerta,
+                    estado = "ACTIVA"
+                ))
+            }
         }
     }
 }
