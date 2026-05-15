@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Brand Colors -->
     <color name="primary">#0a0a0a</color>
     <color name="on_primary">#ffffff</color>
     <color name="brand_green">#00d4a4</color>
     <color name="brand_green_deep">#00b48a</color>
+    <color name="brand_green_soft">#7cebcb</color>
+
+    <!-- Surface Colors -->
     <color name="canvas">#ffffff</color>
+    <color name="canvas_dark">#0a0a0a</color>
     <color name="surface">#f7f7f7</color>
+    <color name="surface_soft">#fafafa</color>
     <color name="hairline">#e5e5e5</color>
+    <color name="hairline_soft">#ededed</color>
+
+    <!-- Text Colors -->
     <color name="ink">#0a0a0a</color>
     <color name="charcoal">#1c1c1e</color>
+    <color name="slate">#3a3a3c</color>
     <color name="steel">#5a5a5c</color>
+    <color name="stone">#888888</color>
+    <color name="muted">#a8a8aa</color>
+
+    <!-- Semantic Colors -->
     <color name="brand_error">#d45656</color>
+    <color name="brand_warn">#c37d0d</color>
+    <color name="brand_tag">#3772cf</color>
 </resources>

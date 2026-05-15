@@ -57,6 +57,10 @@ class MainActivity : AppCompatActivity() {
         binding.btnReports.setOnClickListener {
             startActivity(Intent(this, ReportesActivity::class.java))
         }
+
+        binding.btnNews.setOnClickListener {
+            startActivity(Intent(this, com.example.dsm_centavitos.ui.NoticiasActivity::class.java))
+        }
     }
 
     private fun loadDashboardData() {

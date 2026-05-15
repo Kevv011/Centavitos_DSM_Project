@@ -1,9 +1,30 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.DSM_Centavitos" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Main Palette -->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorSecondary">@color/brand_green</item>
+        <item name="colorOnSecondary">@color/primary</item>
+        <item name="colorTertiary">@color/brand_green_soft</item>
+
+        <!-- Containers (Fixes purple tones in Material3 components like TonalButtons) -->
+        <item name="colorPrimaryContainer">@color/surface</item>
+        <item name="colorOnPrimaryContainer">@color/primary</item>
+        <item name="colorSecondaryContainer">@color/surface_soft</item>
+        <item name="colorOnSecondaryContainer">@color/brand_green_deep</item>
+
+        <!-- Surfaces -->
         <item name="android:windowBackground">@color/canvas</item>
+        <item name="colorSurface">@color/canvas</item>
+        <item name="colorOnSurface">@color/ink</item>
+        <item name="colorSurfaceVariant">@color/surface</item>
+        <item name="colorOnSurfaceVariant">@color/steel</item>
+        <item name="colorOutline">@color/hairline</item>
+
+        <!-- Status Bar -->
+        <item name="android:statusBarColor">@color/canvas</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 
     <style name="Theme.DSM_Centavitos" parent="Base.Theme.DSM_Centavitos" />
@@ -13,6 +34,8 @@
         <item name="backgroundTint">@color/primary</item>
         <item name="android:textColor">@color/on_primary</item>
         <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Centavitos.Button.Pill</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
     </style>
 
     <style name="ShapeAppearance.Centavitos.Button.Pill" parent="">
@@ -25,6 +48,8 @@
         <item name="boxStrokeColor">@color/brand_green</item>
         <item name="hintTextColor">@color/steel</item>
         <item name="shapeAppearanceOverlay">@style/ShapeAppearance.Centavitos.Input</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
     </style>
 
     <style name="ShapeAppearance.Centavitos.Input" parent="">

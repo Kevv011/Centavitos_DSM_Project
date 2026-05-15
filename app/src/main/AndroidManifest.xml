@@ -55,6 +55,11 @@
             android:name=".MainActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".ui.NoticiasActivity"
+            android:exported="false"
+            android:label="Noticias Financieras" />
+
     </application>
 
 </manifest>
